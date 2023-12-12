@@ -6,8 +6,9 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors());
-app.get("/", (req, res) => {
-  return res.status(200).json({ message: "API working" });
+
+app.get('/', (req, res)=>{
+  res.redirect('https://documenter.getpostman.com/view/25241279/2s9Ykj9i9V');
 });
 app.use("/posts", proxy("http://localhost:8001"));
 app.use("/comments", proxy("http://localhost:8002"));
